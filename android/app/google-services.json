@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "70982992379",
+    "project_id": "lcu-crown",
+    "storage_bucket": "lcu-crown.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70982992379:android:c84ed0f42a464e43ddcb5e",
+        "android_client_info": {
+          "package_name": "com.example.lcu_crown"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70982992379-24gg2cjp639i6pr97ro1a4a2ah206qqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj6iX7TQ7DJTwF12u-Fq6Xgd1n-aNohV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70982992379-24gg2cjp639i6pr97ro1a4a2ah206qqp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "70982992379-jh6h21evggkne9hpoboaml55oec049vb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lcuCrown"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

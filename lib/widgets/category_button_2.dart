@@ -65,11 +65,115 @@ class CategoryButton2 extends StatelessWidget {
                         }
                         final data = snapshot.requireData;
                         if ((data.docs[0]["mr"]) == "") {
-                          return Text(
-                            "No Candidate Selected...",
-                            style: TextStyle(
-                              fontSize: 16.0,
-                            ),
+                          return Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "No Candidate Selected...",
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Icon(Icons.people),
+                                      ),
+                                      Text(
+                                        (num).toString() + " candidates",
+                                        style: TextStyle(
+                                          fontSize: 16.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  GestureDetector(
+                                    child: Container(
+                                      child: Center(
+                                        child: TextButton(
+                                          onPressed: ((hasVoted == false)
+                                              ? press
+                                              : () {
+                                                  showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (BuildContext context) {
+                                                      return AlertDialog(
+                                                        insetPadding:
+                                                            EdgeInsets.all(24),
+                                                        contentPadding:
+                                                            EdgeInsets.all(12),
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(16),
+                                                        ),
+                                                        title: Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                        .symmetric(
+                                                                    horizontal:
+                                                                        8.0),
+                                                            child: Center(
+                                                                child: Column(
+                                                              children: [
+                                                                Icon(
+                                                                  Icons.cancel,
+                                                                  color: Colors
+                                                                      .red,
+                                                                  size: 40,
+                                                                ),
+                                                                SizedBox(
+                                                                  height: 8,
+                                                                ),
+                                                                Text(
+                                                                  "Unfortunately, you can only vote once!",
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold),
+                                                                ),
+                                                              ],
+                                                            ))),
+                                                      );
+                                                    },
+                                                  );
+                                                }),
+                                          child: Text(
+                                            "View",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16),
+                                          ),
+                                        ),
+                                      ),
+                                      height: 35,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: Color(0xFF2A3299),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              )
+                            ],
                           );
                         }
 
@@ -77,98 +181,25 @@ class CategoryButton2 extends StatelessWidget {
                           hasVoted = true;
                         }*/
 
-                        return Text(
-                          "${data.docs[0]["mr"]}",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0,
-                            color: Colors.pink,
-                          ),
+                        return Column(
+                          children: [
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              "You Voted For ${data.docs[0]["mr"]}!",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Colors.pink,
+                              ),
+                            ),
+                          ],
                         );
                       }),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(Icons.people),
-                    ),
-                    Text(
-                      (num).toString() + " candidates",
-                      style: TextStyle(
-                        fontSize: 16.0,
-                      ),
-                    ),
-                  ],
-                ),
-                GestureDetector(
-                  child: Container(
-                    child: Center(
-                      child: TextButton(
-                        onPressed: ((hasVoted != true)
-                            ? press
-                            : () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      insetPadding: EdgeInsets.all(24),
-                                      contentPadding: EdgeInsets.all(12),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(16),
-                                      ),
-                                      title: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Center(
-                                              child: Column(
-                                            children: [
-                                              Icon(
-                                                Icons.cancel,
-                                                color: Colors.red,
-                                                size: 40,
-                                              ),
-                                              SizedBox(
-                                                height: 8,
-                                              ),
-                                              Text(
-                                                "Unfortunately, you can only vote once!",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    fontSize: 18.0,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ))),
-                                    );
-                                  },
-                                );
-                              }),
-                        child: Text(
-                          "View",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                    ),
-                    height: 35,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: Color(0xFF2A3299),
-                    ),
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),

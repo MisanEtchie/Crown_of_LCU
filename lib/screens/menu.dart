@@ -28,7 +28,7 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     //String info = "Ife";
-    bool done;
+    //bool done;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,

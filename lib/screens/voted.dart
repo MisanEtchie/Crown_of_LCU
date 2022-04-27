@@ -127,7 +127,7 @@ class _VotedState extends State<Voted> {
                               builder: (context) => Menu(
                                 name: "",
                                 name2: "",
-                                //done: true,
+                                //donee: true,
                                 //hasVotedmiss: true;
                               ),
                             ),

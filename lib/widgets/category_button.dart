@@ -182,20 +182,61 @@ class CategoryButton extends StatelessWidget {
                           hasVoted = true;
                         }*/
 
-                        return Column(
-                          children: [
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              "You Voted For ${data.docs[0]["miss"]}!",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
-                                color: Colors.pink,
+                        return GestureDetector(
+                          onTap: (() {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return SimpleDialog(
+                                    insetPadding: EdgeInsets.all(24),
+                                    contentPadding: EdgeInsets.all(12),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    children: [
+                                      Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: Center(
+                                              child: Column(
+                                            children: [
+                                              Icon(
+                                                Icons.cancel,
+                                                color: Colors.red,
+                                                size: 40,
+                                              ),
+                                              SizedBox(
+                                                height: 8,
+                                              ),
+                                              Text(
+                                                "Unfortunately, you can only vote once!",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontSize: 18.0,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ],
+                                          ))),
+                                    ],
+                                  );
+                                });
+                          }),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 8,
                               ),
-                            ),
-                          ],
+                              Text(
+                                "You Voted For ${data.docs[0]["miss"]}!",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                  color: Colors.pink,
+                                ),
+                              ),
+                            ],
+                          ),
                         );
                       }),
                 ),

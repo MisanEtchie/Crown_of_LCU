@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                             height: 8,
                           ),
                           Text(
-                            "Cast In Your Votes for Mr & Mrs Lead City!",
+                            "Cast In Your Votes for Mr & Miss Lead City!",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.grey[700],

@@ -215,6 +215,9 @@ class CategoryButton2 extends StatelessWidget {
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
+                                              SizedBox(
+                                                height: 16,
+                                              ),
                                             ],
                                           ))),
                                     ],

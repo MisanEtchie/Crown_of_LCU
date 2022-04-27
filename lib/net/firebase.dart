@@ -8,7 +8,7 @@ Future<void> addUser() {
     {
       'miss': "",
       'mr': "",
-      'x': "l",
+
       //'uid': uid,
     },
   );
